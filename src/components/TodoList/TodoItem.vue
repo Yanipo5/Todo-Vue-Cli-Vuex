@@ -6,13 +6,12 @@
       </div>
       <input :id="'todo'+index" v-show="editMode" @mouseleave="toggleEditMode()" v-model="todo.txt"/>
       <div class="buttons">
-        <a v-show="!todo.isCompleted()" @click="todo.setCompletedStatus()"> complete </a>
-        <a v-show="todo.isCompleted()" @click="todo.setUncompletedStatus()"> unomplete </a>
-        <a @click="deleteItem(index)"> delete </a>
+          <b-badge v-show="!todo.isCompleted()" pill variant="success" @click="todo.setCompletedStatus()">Complete</b-badge>
+          <b-badge v-show="todo.isCompleted()" pill variant="warning" @click="todo.setUncompletedStatus()">Uncomplete</b-badge>
+          <b-badge pill variant="danger" @click="deleteItem(index)">delete</b-badge>
       </div>
     </div>
 </template>
-
 <script>
 /**
  * @argument todo: a Todo class
@@ -24,7 +23,7 @@ export default {
   name: "TodoItem",
   props: {
     todo: Object,
-    index: Number,
+    index: Number
   },
   data: function() {
     return {
