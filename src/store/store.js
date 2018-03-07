@@ -3,16 +3,14 @@ import Vuex from "vuex";
 import Todo from "../models/Todo.model.js";
 
 Vue.use(Vuex);
-
 export default new Vuex.Store({
   state: {
-    todos: [
-      new Todo("fitst todo from father"),
-      new Todo("second todo from father"),
-      new Todo("third todo from father"),
-      new Todo("last todo from father"),
-      new Todo("Added now")
-    ],
+    // if exists, init todos from local storage as todo objects, else init new array.
+    todos: window.localStorage.getItem("todos")
+      ? JSON.parse(window.localStorage.getItem("todos")).map(todo => {
+          return new Todo(todo.txt, todo.status);
+        })
+      : [],
     filter: ""
   },
   getters: {
@@ -29,8 +27,8 @@ export default new Vuex.Store({
     updateFilter(state, newFilter) {
       state.filter = newFilter;
     },
-    insertNewTodo(state, todo){
-        state.todos.push(todo);
+    insertNewTodo(state, todo) {
+      state.todos.push(todo);
     }
   }
 });

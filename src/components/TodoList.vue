@@ -30,6 +30,20 @@ export default {
         .toLowerCase()
         .includes(filter);
     }
+  },
+  watch: {
+    todos: {
+      //deep watching
+      handler: function() {
+        const temp = [];
+        this.todos.forEach(todo => {
+          const { txt, status } = todo;
+          temp.push({ txt, status });
+        });
+        window.localStorage.setItem("todos", JSON.stringify(temp));
+      },
+      deep: true
+    }
   }
 };
 </script>
