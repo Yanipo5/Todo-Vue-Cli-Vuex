@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import AddNewTodo from "./AddNewTodo.todoControls";
-import FilterTodos from "./FilterTodos.todoControls";
+import AddNewTodo from "./AddNewTodo";
+import FilterTodos from "./FilterTodos";
 
 /**
  * @description this component serve a container for control items

@@ -60,15 +60,17 @@ export default {
 <style scoped>
 .todo {
   position: relative;
-  border: 3px solid lightgray;
-  background-color: lightcoral;
-  padding: 5px;
-  margin-bottom: 2px;
+  border: 1px black solid;
+  background-color: lightsalmon;
   opacity: 0.75;
+  padding: 5px;
+  margin-top: 5px;
+
+  transition: all, ease-in, 0.3s;
 }
 
 .todo:hover {
-  opacity: 0.9;
+  opacity: 1;
 }
 .buttons {
   position: absolute;

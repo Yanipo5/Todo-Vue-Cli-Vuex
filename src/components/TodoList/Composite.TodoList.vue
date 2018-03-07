@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import TodoItem from "./TodoItem.TodoList.vue";
+import TodoItem from "./TodoItem.vue";
 
 /**
  * @description this component serve a base list view for the todo items
