@@ -13,16 +13,6 @@ export default new Vuex.Store({
       : [],
     filter: ""
   },
-  getters: {
-    filteredTodos: state => {
-      return state.todos.filter(todo => {
-        return todo
-          .getTxt()
-          .toLowerCase()
-          .includes(state.filter.toLowerCase());
-      });
-    }
-  },
   mutations: {
     updateFilter(state, newFilter) {
       state.filter = newFilter;
