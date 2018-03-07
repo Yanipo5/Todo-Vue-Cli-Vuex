@@ -9,6 +9,9 @@
 import AddNewTodo from "./AddNewTodo.todoControls";
 import FilterTodos from "./FilterTodos.todoControls";
 
+/**
+ * @description this component serve a container for control items
+ */
 export default {
   name: "TodoControls",
   components: {

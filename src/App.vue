@@ -10,6 +10,9 @@ import store from "./store/store";
 import TheHeader from "./components/TheHeader.vue";
 import TheBody from "./components/TheBody.vue";
 
+/**
+ * @description This component serve as main app entery point
+ * */
 export default {
   store,
   name: "app",

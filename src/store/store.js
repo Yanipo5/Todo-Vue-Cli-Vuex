@@ -19,6 +19,9 @@ export default new Vuex.Store({
     },
     insertNewTodo(state, todo) {
       state.todos.push(todo);
+    },
+    deleteTodo(state, index) {
+      state.todos.splice(index, 1);
     }
   }
 });

@@ -15,8 +15,9 @@
 
 <script>
 /**
+ * @argument todo: a Todo class
+ * @argument index: an index
  * @description - Todo Item component.
- * @argument - takes 1 todo item (see to Todo model)
  *
  */
 export default {
@@ -24,7 +25,6 @@ export default {
   props: {
     todo: Object,
     index: Number,
-    deleteItem: Function
   },
   data: function() {
     return {
@@ -33,6 +33,9 @@ export default {
     };
   },
   methods: {
+    deleteItem: function(index) {
+      this.$store.commit("deleteTodo", index);
+    },
     toggleEditMode: function() {
       this.editMode = !this.editMode;
     },

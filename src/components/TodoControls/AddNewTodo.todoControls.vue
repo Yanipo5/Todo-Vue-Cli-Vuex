@@ -1,5 +1,5 @@
 <template>
-        <input placeholder="enter new todo then click 'enter'" type="text" v-model="newTodo" @keyup.enter="addTodo(newTodo)">
+        <input placeholder="enter new todo then click 'enter'" type="text" v-model="newTodoText" @keyup.enter="addTodo(newTodoText)">
 </template>
 
 <script>
@@ -9,13 +9,16 @@ export default {
   name: "AddNewTodo",
   data: function() {
     return {
-      newTodo: ""
+      newTodoText: ""
     };
   },
   methods: {
-    addTodo(todo) {
-      this.$store.commit("insertNewTodo", new Todo(todo));
-      this.newTodo = "";
+    /**
+     * @augments newTodoText: a new Todo text
+     * */
+    addTodo(newTodoText) {
+      this.$store.commit("insertNewTodo", new Todo(newTodoText));
+      this.newTodoText = "";
     }
   }
 };

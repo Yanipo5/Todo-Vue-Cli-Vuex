@@ -6,6 +6,10 @@
 </template>
 
 <script>
+
+/**
+ * @description This components serve the the main app header (should be used as singelton)
+ */
 export default {
   name: "AppHeader"
 };

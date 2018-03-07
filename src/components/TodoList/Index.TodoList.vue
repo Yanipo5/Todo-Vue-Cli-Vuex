@@ -1,12 +1,15 @@
 <template>
     <div class="todo-container">
-      <todo-item v-for="(todo, index) in todos" v-show="getTodoVisibility(todo, filter)" v-bind="{todo, index, deleteItem}" :key="index"/>
+      <todo-item v-for="(todo, index) in todos" v-show="getTodoVisibility(todo, filter)" v-bind="{todo, index}" :key="index"/>
     </div>
 </template>
 
 <script>
 import TodoItem from "./TodoItem.TodoList.vue";
 
+/**
+ * @description this component serve a base list view for the todo items
+ */
 export default {
   name: "TodoList",
   components: {
@@ -21,9 +24,11 @@ export default {
     }
   },
   methods: {
-    deleteItem: function(index) {
-      this.todos.splice(index, 1);
-    },
+    /**
+     * @description will toggle Todo item visibility based on store.filter. 
+     * (note usage of v-show instead of filtered list, 
+     * this is beacuse toggeling visibility is faster than changing the DOM whitch each new filter value)
+     */
     getTodoVisibility: (todo, filter) => {
       return todo
         .getTxt()
@@ -33,13 +38,16 @@ export default {
   },
   watch: {
     todos: {
-      //deep watching
+      /**
+       * @description save the Todos state to the localStorage with each todo change
+       */
       handler: function() {
         const temp = [];
         this.todos.forEach(todo => {
           const { txt, status } = todo;
           temp.push({ txt, status });
         });
+        //TODO- trigger save only once typing a new todo is complete (currently save on each key type, not optimazed for performace, but un noticable for short todo lists).
         window.localStorage.setItem("todos", JSON.stringify(temp));
       },
       deep: true
