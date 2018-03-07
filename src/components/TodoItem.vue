@@ -17,7 +17,6 @@
 /**
  * @description - Todo Item component.
  * @argument - takes 1 todo item (see to Todo model)
- * @event - clicking on todo text will open an editable text fils. this will automaticall focus the next keyboard key.
  *
  */
 export default {
@@ -66,7 +65,7 @@ export default {
 }
 
 .todo:hover {
-  opacity: 0.9 5;
+  opacity: 0.9;
 }
 .buttons {
   position: absolute;

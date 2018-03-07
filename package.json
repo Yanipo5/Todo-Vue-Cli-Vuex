@@ -1,5 +1,5 @@
 {
-  "name": "Todo-App",
+  "name": "todo_app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,7 +15,8 @@
     "@vue/cli-plugin-babel": "^3.0.0-beta.3",
     "@vue/cli-plugin-eslint": "^3.0.0-beta.3",
     "@vue/cli-service": "^3.0.0-beta.3",
-    "vue-template-compiler": "^2.5.13"
+    "vue-template-compiler": "^2.5.13",
+    "vuex": "^3.0.1"
   },
   "babel": {
     "presets": [

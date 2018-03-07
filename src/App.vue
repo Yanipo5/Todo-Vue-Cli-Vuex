@@ -1,27 +1,32 @@
 <template>
   <div id="app">
-    <App-Header/>
-    <App-Controls/>
-    <App-Body/>
+    <The-Header/>
+    <The-Controls/>
+    <The-Body/>
   </div>
 </template>
 
 <script>
-import AppHeader from './components/AppHeader.vue'
-import AppControls from './components/AppControls.vue'
-import AppBody from './components/AppBody.vue'
+import store from "./store/store";
+import TheHeader from './components/TheHeader.vue'
+import TheControls from './components/TheControls.vue'
+import TheBody from './components/TheBody.vue'
 
 export default {
+  store,
   name: 'app',
   components: {
-    AppHeader,
-    AppControls,
-    AppBody
+    TheHeader,
+    TheControls,
+    TheBody
   }
 }
 </script>
 
 <style>
+:root {
+  --main-width: 500px;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
 }
