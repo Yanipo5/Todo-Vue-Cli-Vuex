@@ -1,7 +1,7 @@
 <template>
     <div class="todo" :title='title'>
       <div v-show="!editMode" @click="toggleEditMode(); setFoucos('todo'+index)" :style="isStrikeThrough">
-        <img v-show="todo.isCompleted()" src="../assets/v-icon.png" alt="v-sign" />
+        <img v-show="todo.isCompleted()" src="../../assets/v-icon.png" alt="v-sign" />
         <span> {{todo.getTxt()}} </span>
       </div>
       <input :id="'todo'+index" v-show="editMode" @mouseleave="toggleEditMode()" v-model="todo.txt"/>
